@@ -27,7 +27,8 @@ load_rc_config ${name}
 
 udpxy_enable=${udpxy_enable-"YES"}
 udpxy_port=${udpxy_port-"4000"}
-udpxy_flags=${udpxy_flags-"-m hn0.2 -c 6"}
+# udpxy_flags=${udpxy_flags-"-m hn0.2 -c 6"} # pfSense
+udpxy_flags=${udpxy_flags-"-m vlan0.2 -c 6"} # OPN Sense
 
 command="/usr/local/sbin/${name}"
 pidfile="/var/run/${name}${udpxy_port}.pid"
